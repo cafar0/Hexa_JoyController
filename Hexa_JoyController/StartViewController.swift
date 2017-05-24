@@ -9,6 +9,7 @@
 import UIKit
 //import CoreGraphics
 
+
 class JoyStick : NSObject{
     
     var containerView : UIView
