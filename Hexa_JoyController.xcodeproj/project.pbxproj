@@ -1,0 +1,670 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D3146B4A1ED460E300AD31EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3146B491ED460E300AD31EC /* AppDelegate.swift */; };
+		D3146B4C1ED460E300AD31EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3146B4B1ED460E300AD31EC /* ViewController.swift */; };
+		D3146B4F1ED460E300AD31EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3146B4D1ED460E300AD31EC /* Main.storyboard */; };
+		D3146B541ED460E300AD31EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3146B521ED460E300AD31EC /* LaunchScreen.storyboard */; };
+		D3146B5F1ED460E400AD31EC /* Hexa_JoyControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3146B5E1ED460E400AD31EC /* Hexa_JoyControllerTests.swift */; };
+		D3146B6A1ED460E400AD31EC /* Hexa_JoyControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3146B691ED460E400AD31EC /* Hexa_JoyControllerUITests.swift */; };
+		D3146B901ED4693800AD31EC /* SocketAckEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3146B781ED4693800AD31EC /* SocketAckEmitter.swift */; };
+		D3146B911ED4693800AD31EC /* SocketAckManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3146B791ED4693800AD31EC /* SocketAckManager.swift */; };
+		D3146B921ED4693800AD31EC /* SocketAnyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3146B7A1ED4693800AD31EC /* SocketAnyEvent.swift */; };
+		D3146B931ED4693800AD31EC /* SocketClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3146B7B1ED4693800AD31EC /* SocketClientManager.swift */; };
+		D3146B941ED4693800AD31EC /* SocketEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3146B7C1ED4693800AD31EC /* SocketEngine.swift */; };
+		D3146B951ED4693800AD31EC /* SocketEngineClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3146B7D1ED4693800AD31EC /* SocketEngineClient.swift */; };
+		D3146B961ED4693800AD31EC /* SocketEnginePacketType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3146B7E1ED4693800AD31EC /* SocketEnginePacketType.swift */; };
+		D3146B971ED4693800AD31EC /* SocketEnginePollable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3146B7F1ED4693800AD31EC /* SocketEnginePollable.swift */; };
+		D3146B981ED4693800AD31EC /* SocketEngineSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3146B801ED4693800AD31EC /* SocketEngineSpec.swift */; };
+		D3146B991ED4693800AD31EC /* SocketEngineWebsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3146B811ED4693800AD31EC /* SocketEngineWebsocket.swift */; };
+		D3146B9A1ED4693800AD31EC /* SocketEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3146B821ED4693800AD31EC /* SocketEventHandler.swift */; };
+		D3146B9B1ED4693800AD31EC /* SocketExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3146B831ED4693800AD31EC /* SocketExtensions.swift */; };
+		D3146B9C1ED4693800AD31EC /* SocketIOClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3146B841ED4693800AD31EC /* SocketIOClient.swift */; };
+		D3146B9D1ED4693800AD31EC /* SocketIOClientConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3146B851ED4693800AD31EC /* SocketIOClientConfiguration.swift */; };
+		D3146B9E1ED4693800AD31EC /* SocketIOClientOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3146B861ED4693800AD31EC /* SocketIOClientOption.swift */; };
+		D3146B9F1ED4693800AD31EC /* SocketIOClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3146B871ED4693800AD31EC /* SocketIOClientSpec.swift */; };
+		D3146BA01ED4693800AD31EC /* SocketIOClientStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3146B881ED4693800AD31EC /* SocketIOClientStatus.swift */; };
+		D3146BA11ED4693800AD31EC /* SocketLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3146B891ED4693800AD31EC /* SocketLogger.swift */; };
+		D3146BA21ED4693800AD31EC /* SocketPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3146B8A1ED4693800AD31EC /* SocketPacket.swift */; };
+		D3146BA31ED4693800AD31EC /* SocketParsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3146B8B1ED4693800AD31EC /* SocketParsable.swift */; };
+		D3146BA41ED4693800AD31EC /* SocketStringReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3146B8C1ED4693800AD31EC /* SocketStringReader.swift */; };
+		D3146BA51ED4693800AD31EC /* SocketTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3146B8D1ED4693800AD31EC /* SocketTypes.swift */; };
+		D3146BA61ED4693800AD31EC /* SSLSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3146B8E1ED4693800AD31EC /* SSLSecurity.swift */; };
+		D3146BA71ED4693800AD31EC /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3146B8F1ED4693800AD31EC /* WebSocket.swift */; };
+		D376E72F1ED5750F006F36D3 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D376E72D1ED5750F006F36D3 /* StartViewController.swift */; };
+		D376E7301ED5750F006F36D3 /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D376E72E1ED5750F006F36D3 /* StartViewController.xib */; };
+		D376E7401ED57826006F36D3 /* CoreGraphics+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D376E7371ED57826006F36D3 /* CoreGraphics+Additions.swift */; };
+		D376E7411ED57826006F36D3 /* JoyStickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D376E7381ED57826006F36D3 /* JoyStickView.swift */; };
+		D376E74D1ED579E6006F36D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D376E74C1ED579E6006F36D3 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D3146B5B1ED460E300AD31EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3146B3E1ED460E300AD31EC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3146B451ED460E300AD31EC;
+			remoteInfo = Hexa_JoyController;
+		};
+		D3146B661ED460E400AD31EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3146B3E1ED460E300AD31EC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3146B451ED460E300AD31EC;
+			remoteInfo = Hexa_JoyController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D3146B461ED460E300AD31EC /* Hexa_JoyController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hexa_JoyController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3146B491ED460E300AD31EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D3146B4B1ED460E300AD31EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D3146B4E1ED460E300AD31EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D3146B531ED460E300AD31EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D3146B551ED460E300AD31EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3146B5A1ED460E300AD31EC /* Hexa_JoyControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Hexa_JoyControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3146B5E1ED460E400AD31EC /* Hexa_JoyControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hexa_JoyControllerTests.swift; sourceTree = "<group>"; };
+		D3146B601ED460E400AD31EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3146B651ED460E400AD31EC /* Hexa_JoyControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Hexa_JoyControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3146B691ED460E400AD31EC /* Hexa_JoyControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hexa_JoyControllerUITests.swift; sourceTree = "<group>"; };
+		D3146B6B1ED460E400AD31EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3146B781ED4693800AD31EC /* SocketAckEmitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketAckEmitter.swift; sourceTree = "<group>"; };
+		D3146B791ED4693800AD31EC /* SocketAckManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketAckManager.swift; sourceTree = "<group>"; };
+		D3146B7A1ED4693800AD31EC /* SocketAnyEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketAnyEvent.swift; sourceTree = "<group>"; };
+		D3146B7B1ED4693800AD31EC /* SocketClientManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketClientManager.swift; sourceTree = "<group>"; };
+		D3146B7C1ED4693800AD31EC /* SocketEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketEngine.swift; sourceTree = "<group>"; };
+		D3146B7D1ED4693800AD31EC /* SocketEngineClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketEngineClient.swift; sourceTree = "<group>"; };
+		D3146B7E1ED4693800AD31EC /* SocketEnginePacketType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketEnginePacketType.swift; sourceTree = "<group>"; };
+		D3146B7F1ED4693800AD31EC /* SocketEnginePollable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketEnginePollable.swift; sourceTree = "<group>"; };
+		D3146B801ED4693800AD31EC /* SocketEngineSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketEngineSpec.swift; sourceTree = "<group>"; };
+		D3146B811ED4693800AD31EC /* SocketEngineWebsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketEngineWebsocket.swift; sourceTree = "<group>"; };
+		D3146B821ED4693800AD31EC /* SocketEventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketEventHandler.swift; sourceTree = "<group>"; };
+		D3146B831ED4693800AD31EC /* SocketExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketExtensions.swift; sourceTree = "<group>"; };
+		D3146B841ED4693800AD31EC /* SocketIOClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketIOClient.swift; sourceTree = "<group>"; };
+		D3146B851ED4693800AD31EC /* SocketIOClientConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketIOClientConfiguration.swift; sourceTree = "<group>"; };
+		D3146B861ED4693800AD31EC /* SocketIOClientOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketIOClientOption.swift; sourceTree = "<group>"; };
+		D3146B871ED4693800AD31EC /* SocketIOClientSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketIOClientSpec.swift; sourceTree = "<group>"; };
+		D3146B881ED4693800AD31EC /* SocketIOClientStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketIOClientStatus.swift; sourceTree = "<group>"; };
+		D3146B891ED4693800AD31EC /* SocketLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketLogger.swift; sourceTree = "<group>"; };
+		D3146B8A1ED4693800AD31EC /* SocketPacket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketPacket.swift; sourceTree = "<group>"; };
+		D3146B8B1ED4693800AD31EC /* SocketParsable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketParsable.swift; sourceTree = "<group>"; };
+		D3146B8C1ED4693800AD31EC /* SocketStringReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketStringReader.swift; sourceTree = "<group>"; };
+		D3146B8D1ED4693800AD31EC /* SocketTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketTypes.swift; sourceTree = "<group>"; };
+		D3146B8E1ED4693800AD31EC /* SSLSecurity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSLSecurity.swift; sourceTree = "<group>"; };
+		D3146B8F1ED4693800AD31EC /* WebSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocket.swift; sourceTree = "<group>"; };
+		D376E72D1ED5750F006F36D3 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		D376E72E1ED5750F006F36D3 /* StartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
+		D376E7371ED57826006F36D3 /* CoreGraphics+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreGraphics+Additions.swift"; sourceTree = "<group>"; };
+		D376E7381ED57826006F36D3 /* JoyStickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoyStickView.swift; sourceTree = "<group>"; };
+		D376E74C1ED579E6006F36D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D3146B431ED460E300AD31EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3146B571ED460E300AD31EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3146B621ED460E400AD31EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D3146B3D1ED460E300AD31EC = {
+			isa = PBXGroup;
+			children = (
+				D3146B481ED460E300AD31EC /* Hexa_JoyController */,
+				D3146B5D1ED460E300AD31EC /* Hexa_JoyControllerTests */,
+				D3146B681ED460E400AD31EC /* Hexa_JoyControllerUITests */,
+				D3146B471ED460E300AD31EC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D3146B471ED460E300AD31EC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D3146B461ED460E300AD31EC /* Hexa_JoyController.app */,
+				D3146B5A1ED460E300AD31EC /* Hexa_JoyControllerTests.xctest */,
+				D3146B651ED460E400AD31EC /* Hexa_JoyControllerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D3146B481ED460E300AD31EC /* Hexa_JoyController */ = {
+			isa = PBXGroup;
+			children = (
+				D3146B771ED4693800AD31EC /* Source */,
+				D376E7361ED57826006F36D3 /* JoyStick */,
+				D3146B491ED460E300AD31EC /* AppDelegate.swift */,
+				D3146B4B1ED460E300AD31EC /* ViewController.swift */,
+				D3146B4D1ED460E300AD31EC /* Main.storyboard */,
+				D3146B521ED460E300AD31EC /* LaunchScreen.storyboard */,
+				D376E74C1ED579E6006F36D3 /* Assets.xcassets */,
+				D3146B551ED460E300AD31EC /* Info.plist */,
+				D376E72D1ED5750F006F36D3 /* StartViewController.swift */,
+				D376E72E1ED5750F006F36D3 /* StartViewController.xib */,
+			);
+			path = Hexa_JoyController;
+			sourceTree = "<group>";
+		};
+		D3146B5D1ED460E300AD31EC /* Hexa_JoyControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				D3146B5E1ED460E400AD31EC /* Hexa_JoyControllerTests.swift */,
+				D3146B601ED460E400AD31EC /* Info.plist */,
+			);
+			path = Hexa_JoyControllerTests;
+			sourceTree = "<group>";
+		};
+		D3146B681ED460E400AD31EC /* Hexa_JoyControllerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D3146B691ED460E400AD31EC /* Hexa_JoyControllerUITests.swift */,
+				D3146B6B1ED460E400AD31EC /* Info.plist */,
+			);
+			path = Hexa_JoyControllerUITests;
+			sourceTree = "<group>";
+		};
+		D3146B771ED4693800AD31EC /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				D3146B781ED4693800AD31EC /* SocketAckEmitter.swift */,
+				D3146B791ED4693800AD31EC /* SocketAckManager.swift */,
+				D3146B7A1ED4693800AD31EC /* SocketAnyEvent.swift */,
+				D3146B7B1ED4693800AD31EC /* SocketClientManager.swift */,
+				D3146B7C1ED4693800AD31EC /* SocketEngine.swift */,
+				D3146B7D1ED4693800AD31EC /* SocketEngineClient.swift */,
+				D3146B7E1ED4693800AD31EC /* SocketEnginePacketType.swift */,
+				D3146B7F1ED4693800AD31EC /* SocketEnginePollable.swift */,
+				D3146B801ED4693800AD31EC /* SocketEngineSpec.swift */,
+				D3146B811ED4693800AD31EC /* SocketEngineWebsocket.swift */,
+				D3146B821ED4693800AD31EC /* SocketEventHandler.swift */,
+				D3146B831ED4693800AD31EC /* SocketExtensions.swift */,
+				D3146B841ED4693800AD31EC /* SocketIOClient.swift */,
+				D3146B851ED4693800AD31EC /* SocketIOClientConfiguration.swift */,
+				D3146B861ED4693800AD31EC /* SocketIOClientOption.swift */,
+				D3146B871ED4693800AD31EC /* SocketIOClientSpec.swift */,
+				D3146B881ED4693800AD31EC /* SocketIOClientStatus.swift */,
+				D3146B891ED4693800AD31EC /* SocketLogger.swift */,
+				D3146B8A1ED4693800AD31EC /* SocketPacket.swift */,
+				D3146B8B1ED4693800AD31EC /* SocketParsable.swift */,
+				D3146B8C1ED4693800AD31EC /* SocketStringReader.swift */,
+				D3146B8D1ED4693800AD31EC /* SocketTypes.swift */,
+				D3146B8E1ED4693800AD31EC /* SSLSecurity.swift */,
+				D3146B8F1ED4693800AD31EC /* WebSocket.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		D376E7361ED57826006F36D3 /* JoyStick */ = {
+			isa = PBXGroup;
+			children = (
+				D376E7371ED57826006F36D3 /* CoreGraphics+Additions.swift */,
+				D376E7381ED57826006F36D3 /* JoyStickView.swift */,
+			);
+			path = JoyStick;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D3146B451ED460E300AD31EC /* Hexa_JoyController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3146B6E1ED460E400AD31EC /* Build configuration list for PBXNativeTarget "Hexa_JoyController" */;
+			buildPhases = (
+				D3146B421ED460E300AD31EC /* Sources */,
+				D3146B431ED460E300AD31EC /* Frameworks */,
+				D3146B441ED460E300AD31EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Hexa_JoyController;
+			productName = Hexa_JoyController;
+			productReference = D3146B461ED460E300AD31EC /* Hexa_JoyController.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D3146B591ED460E300AD31EC /* Hexa_JoyControllerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3146B711ED460E400AD31EC /* Build configuration list for PBXNativeTarget "Hexa_JoyControllerTests" */;
+			buildPhases = (
+				D3146B561ED460E300AD31EC /* Sources */,
+				D3146B571ED460E300AD31EC /* Frameworks */,
+				D3146B581ED460E300AD31EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D3146B5C1ED460E300AD31EC /* PBXTargetDependency */,
+			);
+			name = Hexa_JoyControllerTests;
+			productName = Hexa_JoyControllerTests;
+			productReference = D3146B5A1ED460E300AD31EC /* Hexa_JoyControllerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D3146B641ED460E400AD31EC /* Hexa_JoyControllerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3146B741ED460E400AD31EC /* Build configuration list for PBXNativeTarget "Hexa_JoyControllerUITests" */;
+			buildPhases = (
+				D3146B611ED460E400AD31EC /* Sources */,
+				D3146B621ED460E400AD31EC /* Frameworks */,
+				D3146B631ED460E400AD31EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D3146B671ED460E400AD31EC /* PBXTargetDependency */,
+			);
+			name = Hexa_JoyControllerUITests;
+			productName = Hexa_JoyControllerUITests;
+			productReference = D3146B651ED460E400AD31EC /* Hexa_JoyControllerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D3146B3E1ED460E300AD31EC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Rodina, Calin";
+				TargetAttributes = {
+					D3146B451ED460E300AD31EC = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = P2DBM5JUK9;
+						ProvisioningStyle = Automatic;
+					};
+					D3146B591ED460E300AD31EC = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = P2DBM5JUK9;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D3146B451ED460E300AD31EC;
+					};
+					D3146B641ED460E400AD31EC = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = P2DBM5JUK9;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D3146B451ED460E300AD31EC;
+					};
+				};
+			};
+			buildConfigurationList = D3146B411ED460E300AD31EC /* Build configuration list for PBXProject "Hexa_JoyController" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D3146B3D1ED460E300AD31EC;
+			productRefGroup = D3146B471ED460E300AD31EC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D3146B451ED460E300AD31EC /* Hexa_JoyController */,
+				D3146B591ED460E300AD31EC /* Hexa_JoyControllerTests */,
+				D3146B641ED460E400AD31EC /* Hexa_JoyControllerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D3146B441ED460E300AD31EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3146B541ED460E300AD31EC /* LaunchScreen.storyboard in Resources */,
+				D376E74D1ED579E6006F36D3 /* Assets.xcassets in Resources */,
+				D376E7301ED5750F006F36D3 /* StartViewController.xib in Resources */,
+				D3146B4F1ED460E300AD31EC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3146B581ED460E300AD31EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3146B631ED460E400AD31EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D3146B421ED460E300AD31EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3146B9C1ED4693800AD31EC /* SocketIOClient.swift in Sources */,
+				D3146B9B1ED4693800AD31EC /* SocketExtensions.swift in Sources */,
+				D3146B991ED4693800AD31EC /* SocketEngineWebsocket.swift in Sources */,
+				D3146B9E1ED4693800AD31EC /* SocketIOClientOption.swift in Sources */,
+				D376E7411ED57826006F36D3 /* JoyStickView.swift in Sources */,
+				D3146B9F1ED4693800AD31EC /* SocketIOClientSpec.swift in Sources */,
+				D376E72F1ED5750F006F36D3 /* StartViewController.swift in Sources */,
+				D3146BA01ED4693800AD31EC /* SocketIOClientStatus.swift in Sources */,
+				D3146BA11ED4693800AD31EC /* SocketLogger.swift in Sources */,
+				D3146B921ED4693800AD31EC /* SocketAnyEvent.swift in Sources */,
+				D3146BA41ED4693800AD31EC /* SocketStringReader.swift in Sources */,
+				D3146BA71ED4693800AD31EC /* WebSocket.swift in Sources */,
+				D3146BA31ED4693800AD31EC /* SocketParsable.swift in Sources */,
+				D3146BA51ED4693800AD31EC /* SocketTypes.swift in Sources */,
+				D3146B9A1ED4693800AD31EC /* SocketEventHandler.swift in Sources */,
+				D3146B951ED4693800AD31EC /* SocketEngineClient.swift in Sources */,
+				D3146BA21ED4693800AD31EC /* SocketPacket.swift in Sources */,
+				D3146B911ED4693800AD31EC /* SocketAckManager.swift in Sources */,
+				D3146B981ED4693800AD31EC /* SocketEngineSpec.swift in Sources */,
+				D3146B901ED4693800AD31EC /* SocketAckEmitter.swift in Sources */,
+				D3146B941ED4693800AD31EC /* SocketEngine.swift in Sources */,
+				D3146B4C1ED460E300AD31EC /* ViewController.swift in Sources */,
+				D3146B4A1ED460E300AD31EC /* AppDelegate.swift in Sources */,
+				D3146B9D1ED4693800AD31EC /* SocketIOClientConfiguration.swift in Sources */,
+				D376E7401ED57826006F36D3 /* CoreGraphics+Additions.swift in Sources */,
+				D3146BA61ED4693800AD31EC /* SSLSecurity.swift in Sources */,
+				D3146B971ED4693800AD31EC /* SocketEnginePollable.swift in Sources */,
+				D3146B961ED4693800AD31EC /* SocketEnginePacketType.swift in Sources */,
+				D3146B931ED4693800AD31EC /* SocketClientManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3146B561ED460E300AD31EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3146B5F1ED460E400AD31EC /* Hexa_JoyControllerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3146B611ED460E400AD31EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3146B6A1ED460E400AD31EC /* Hexa_JoyControllerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D3146B5C1ED460E300AD31EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3146B451ED460E300AD31EC /* Hexa_JoyController */;
+			targetProxy = D3146B5B1ED460E300AD31EC /* PBXContainerItemProxy */;
+		};
+		D3146B671ED460E400AD31EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3146B451ED460E300AD31EC /* Hexa_JoyController */;
+			targetProxy = D3146B661ED460E400AD31EC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D3146B4D1ED460E300AD31EC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3146B4E1ED460E300AD31EC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D3146B521ED460E300AD31EC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3146B531ED460E300AD31EC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D3146B6C1ED460E400AD31EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D3146B6D1ED460E400AD31EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D3146B6F1ED460E400AD31EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = P2DBM5JUK9;
+				INFOPLIST_FILE = Hexa_JoyController/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.calin.Hexa-JoyController";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		D3146B701ED460E400AD31EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = P2DBM5JUK9;
+				INFOPLIST_FILE = Hexa_JoyController/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.calin.Hexa-JoyController";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		D3146B721ED460E400AD31EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = P2DBM5JUK9;
+				INFOPLIST_FILE = Hexa_JoyControllerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.calin.Hexa-JoyControllerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hexa_JoyController.app/Hexa_JoyController";
+			};
+			name = Debug;
+		};
+		D3146B731ED460E400AD31EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = P2DBM5JUK9;
+				INFOPLIST_FILE = Hexa_JoyControllerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.calin.Hexa-JoyControllerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hexa_JoyController.app/Hexa_JoyController";
+			};
+			name = Release;
+		};
+		D3146B751ED460E400AD31EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = P2DBM5JUK9;
+				INFOPLIST_FILE = Hexa_JoyControllerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.calin.Hexa-JoyControllerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Hexa_JoyController;
+			};
+			name = Debug;
+		};
+		D3146B761ED460E400AD31EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = P2DBM5JUK9;
+				INFOPLIST_FILE = Hexa_JoyControllerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.calin.Hexa-JoyControllerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Hexa_JoyController;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D3146B411ED460E300AD31EC /* Build configuration list for PBXProject "Hexa_JoyController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3146B6C1ED460E400AD31EC /* Debug */,
+				D3146B6D1ED460E400AD31EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3146B6E1ED460E400AD31EC /* Build configuration list for PBXNativeTarget "Hexa_JoyController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3146B6F1ED460E400AD31EC /* Debug */,
+				D3146B701ED460E400AD31EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3146B711ED460E400AD31EC /* Build configuration list for PBXNativeTarget "Hexa_JoyControllerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3146B721ED460E400AD31EC /* Debug */,
+				D3146B731ED460E400AD31EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3146B741ED460E400AD31EC /* Build configuration list for PBXNativeTarget "Hexa_JoyControllerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3146B751ED460E400AD31EC /* Debug */,
+				D3146B761ED460E400AD31EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D3146B3E1ED460E300AD31EC /* Project object */;
+}
