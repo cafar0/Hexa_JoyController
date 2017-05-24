@@ -39,9 +39,8 @@
 		D3146BA71ED4693800AD31EC /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3146B8F1ED4693800AD31EC /* WebSocket.swift */; };
 		D376E72F1ED5750F006F36D3 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D376E72D1ED5750F006F36D3 /* StartViewController.swift */; };
 		D376E7301ED5750F006F36D3 /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D376E72E1ED5750F006F36D3 /* StartViewController.xib */; };
-		D376E7401ED57826006F36D3 /* CoreGraphics+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D376E7371ED57826006F36D3 /* CoreGraphics+Additions.swift */; };
-		D376E7411ED57826006F36D3 /* JoyStickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D376E7381ED57826006F36D3 /* JoyStickView.swift */; };
 		D376E74D1ED579E6006F36D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D376E74C1ED579E6006F36D3 /* Assets.xcassets */; };
+		D3C348341ED5BCB500C7ACA1 /* CoreGraphics+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C348331ED5BCB500C7ACA1 /* CoreGraphics+Additions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,9 +99,8 @@
 		D3146B8F1ED4693800AD31EC /* WebSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocket.swift; sourceTree = "<group>"; };
 		D376E72D1ED5750F006F36D3 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		D376E72E1ED5750F006F36D3 /* StartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
-		D376E7371ED57826006F36D3 /* CoreGraphics+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreGraphics+Additions.swift"; sourceTree = "<group>"; };
-		D376E7381ED57826006F36D3 /* JoyStickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoyStickView.swift; sourceTree = "<group>"; };
 		D376E74C1ED579E6006F36D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D3C348331ED5BCB500C7ACA1 /* CoreGraphics+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreGraphics+Additions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,13 +152,13 @@
 			isa = PBXGroup;
 			children = (
 				D3146B771ED4693800AD31EC /* Source */,
-				D376E7361ED57826006F36D3 /* JoyStick */,
 				D3146B491ED460E300AD31EC /* AppDelegate.swift */,
 				D3146B4B1ED460E300AD31EC /* ViewController.swift */,
 				D3146B4D1ED460E300AD31EC /* Main.storyboard */,
 				D3146B521ED460E300AD31EC /* LaunchScreen.storyboard */,
 				D376E74C1ED579E6006F36D3 /* Assets.xcassets */,
 				D3146B551ED460E300AD31EC /* Info.plist */,
+				D3C348331ED5BCB500C7ACA1 /* CoreGraphics+Additions.swift */,
 				D376E72D1ED5750F006F36D3 /* StartViewController.swift */,
 				D376E72E1ED5750F006F36D3 /* StartViewController.xib */,
 			);
@@ -214,15 +212,6 @@
 				D3146B8F1ED4693800AD31EC /* WebSocket.swift */,
 			);
 			path = Source;
-			sourceTree = "<group>";
-		};
-		D376E7361ED57826006F36D3 /* JoyStick */ = {
-			isa = PBXGroup;
-			children = (
-				D376E7371ED57826006F36D3 /* CoreGraphics+Additions.swift */,
-				D376E7381ED57826006F36D3 /* JoyStickView.swift */,
-			);
-			path = JoyStick;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,10 +353,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3146B9C1ED4693800AD31EC /* SocketIOClient.swift in Sources */,
+				D3C348341ED5BCB500C7ACA1 /* CoreGraphics+Additions.swift in Sources */,
 				D3146B9B1ED4693800AD31EC /* SocketExtensions.swift in Sources */,
 				D3146B991ED4693800AD31EC /* SocketEngineWebsocket.swift in Sources */,
 				D3146B9E1ED4693800AD31EC /* SocketIOClientOption.swift in Sources */,
-				D376E7411ED57826006F36D3 /* JoyStickView.swift in Sources */,
 				D3146B9F1ED4693800AD31EC /* SocketIOClientSpec.swift in Sources */,
 				D376E72F1ED5750F006F36D3 /* StartViewController.swift in Sources */,
 				D3146BA01ED4693800AD31EC /* SocketIOClientStatus.swift in Sources */,
@@ -387,7 +376,6 @@
 				D3146B4C1ED460E300AD31EC /* ViewController.swift in Sources */,
 				D3146B4A1ED460E300AD31EC /* AppDelegate.swift in Sources */,
 				D3146B9D1ED4693800AD31EC /* SocketIOClientConfiguration.swift in Sources */,
-				D376E7401ED57826006F36D3 /* CoreGraphics+Additions.swift in Sources */,
 				D3146BA61ED4693800AD31EC /* SSLSecurity.swift in Sources */,
 				D3146B971ED4693800AD31EC /* SocketEnginePollable.swift in Sources */,
 				D3146B961ED4693800AD31EC /* SocketEnginePacketType.swift in Sources */,
