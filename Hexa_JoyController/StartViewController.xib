@@ -88,6 +88,13 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKC-Aj-QnV">
+                    <rect key="frame" x="164" y="318.5" width="46" height="30"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="onButton:" destination="-1" eventType="touchUpInside" id="lXF-Hm-PDe"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -97,6 +104,8 @@
                 <constraint firstAttribute="trailing" secondItem="5u1-CZ-5uL" secondAttribute="trailing" constant="16" id="IlU-Wr-IKA"/>
                 <constraint firstItem="wqW-4Y-wOh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="MF5-lf-3Zu"/>
                 <constraint firstItem="RIX-zC-k5O" firstAttribute="centerY" secondItem="Ytq-26-gbg" secondAttribute="centerY" id="Qb0-4z-1Nf"/>
+                <constraint firstItem="mKC-Aj-QnV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="aQg-aX-cur"/>
+                <constraint firstItem="mKC-Aj-QnV" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="bvy-dS-pM8"/>
                 <constraint firstItem="wqW-4Y-wOh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="tPm-Bq-FJI"/>
                 <constraint firstItem="5u1-CZ-5uL" firstAttribute="height" secondItem="wqW-4Y-wOh" secondAttribute="height" id="uvp-fw-VN5"/>
                 <constraint firstItem="Ytq-26-gbg" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="va8-hG-GRR"/>

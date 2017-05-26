@@ -30,7 +30,6 @@ class JoyStick : NSObject{
 
 class StartViewController: UIViewController {
     
-    
     private var radius : CGFloat = 0
     private var displacement : CGFloat = 0
     private var lastAngleRadians : Float = 0
@@ -48,10 +47,17 @@ class StartViewController: UIViewController {
     @IBOutlet weak var leftAngleLabel: UILabel!
     @IBOutlet weak var rightAngleLabel: UILabel!
     
+    @IBAction func onButton(_ sender: Any) {
+        print("Hello")
+        
+        SocketIOManager.sharedInstance.socket.emit("aaaa", "asdasd")
+//        SocketIOManager.sharedInstance.closeConnection()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        SocketIOManager.sharedInstance.establishConnection()
         leftJoyStick   = JoyStick(containerView: leftJoyContainer, baseView: leftJoyBase, buttonView: leftJoyButton)
         leftJoyStick?.update = {[weak self] radians in
             self?.leftAngleLabel.text = radians + "º"
@@ -158,5 +164,4 @@ class StartViewController: UIViewController {
         }
 
     }
-   
 }
