@@ -43,10 +43,7 @@ class JoysticksViewController: UIViewController, SocketManagerDelegate {
 
     @IBAction func onConnect(_ sender: Any) {
         socketManager.networkEnable()
-        
-        connectButton.alpha = 0.3
         connectButton.isEnabled = false
-        
     }
     
     @IBAction func onGetKey(_ sender: Any) {
@@ -93,6 +90,8 @@ class JoysticksViewController: UIViewController, SocketManagerDelegate {
         self.navigationController?.isNavigationBarHidden = true
         radius = leftJoyContainer.bounds.size.width / 4.0
         socketManager.delegate = self
+        
+        presentAlert(title: "Connect to", message: "Please provide address")
     }
     
     override func didReceiveMemoryWarning() {
@@ -164,6 +163,16 @@ class JoysticksViewController: UIViewController, SocketManagerDelegate {
                                                  y: rightJoyStick.baseView.frame.midY),
                            joyStick: rightJoyStick)
             }
+             else {
+                updatePosition(location: CGPoint(x: leftJoyStick.baseView.frame.midX,
+                                                y: leftJoyStick.baseView.frame.midY),
+                              joyStick: leftJoyStick)
+
+                updatePosition(location: CGPoint(x: leftJoyStick.baseView.frame.midX,
+                                                y: leftJoyStick.baseView.frame.midY),
+                              joyStick: rightJoyStick)
+
+            }
         }
     }
     
@@ -177,10 +186,10 @@ class JoysticksViewController: UIViewController, SocketManagerDelegate {
             let x = CGFloat(sinf(newAngleRadians)) * radius
             let y = CGFloat(cosf(newAngleRadians)) * radius
             joyStick.buttonView.frame.origin = CGPoint(x: x + joyStick.baseView.bounds.midX - joyStick.buttonView.bounds.size.width/2.0,
-                                             y: y + joyStick.baseView.bounds.midY - joyStick.buttonView.bounds.size.height/2.0)
+                                             y: y + joyStick.baseView.frame.midY - joyStick.buttonView.frame.size.height/2.0)
         }
         else {
-            joyStick.buttonView.center = joyStick.baseView.bounds.mid + delta
+            joyStick.buttonView.center = joyStick.baseView.frame.mid + delta
         }
     
         let newClampedDisplacement = min(newDisplacement, 1.0)
@@ -264,7 +273,7 @@ class JoysticksViewController: UIViewController, SocketManagerDelegate {
         statusLabel.text = "Failed to connect to server"
         connectButton.isEnabled = true
         toggleJoystick(enable: false)
-        presentAlert()
+        presentAlert(title: "Connection error", message: "Please check address")
     }
     
     func hasBytesAvailable() {
@@ -279,9 +288,9 @@ class JoysticksViewController: UIViewController, SocketManagerDelegate {
     }
     
     //MARK :- Alert
-    func presentAlert() {
-        let alert = UIAlertController(title: "Connection error",
-                                      message: "Please check address",
+    func presentAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title,
+                                      message: message,
                                       preferredStyle: .alert)
         alert.addTextField(configurationHandler: {[weak self] textField in
             textField.text = self?.socketManager.addr
