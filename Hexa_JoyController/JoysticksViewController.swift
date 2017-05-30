@@ -17,7 +17,7 @@ class JoysticksViewController: UIViewController, SocketManagerDelegate {
     private var displacement : CGFloat = 0
     private var lastAngleRadians : Float = 0
     private var angle : CGFloat = 0
-    
+    private var isJoystickEnable = false
     private var leftJoyStick : JoyStick?
     private var rightJoyStick: JoyStick?
     
@@ -116,6 +116,7 @@ class JoysticksViewController: UIViewController, SocketManagerDelegate {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+       
         guard let touch = touches.first else { return }
         let location = touch.location(in: view)
         
@@ -125,7 +126,7 @@ class JoysticksViewController: UIViewController, SocketManagerDelegate {
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
         let location = touch.location(in: view)
-        
+            
         resetPosition(location: location)
     }
     
@@ -134,31 +135,35 @@ class JoysticksViewController: UIViewController, SocketManagerDelegate {
         guard let leftJoyStick = leftJoyStick else {return}
         guard let rightJoyStick = rightJoyStick else {return}
         
-        if leftJoyStick.containerView.frame.contains(location) {
-            updatePosition(location: touch.location(in: leftJoyContainer), joyStick: leftJoyStick)
-        }
-        else if rightJoyStick.containerView.frame.contains(location) {
-            updatePosition(location: touch.location(in: righJoyContainer), joyStick: rightJoyStick)
+        if isJoystickEnable{
+            if leftJoyStick.containerView.frame.contains(location) {
+                updatePosition(location: touch.location(in: leftJoyContainer), joyStick: leftJoyStick)
+            }
+            else if rightJoyStick.containerView.frame.contains(location) {
+                updatePosition(location: touch.location(in: righJoyContainer), joyStick: rightJoyStick)
+            }
         }
         
     }
     
     //MARK :- Update Button Position
     func resetPosition(location: CGPoint) {
-        guard let leftJoyStick = leftJoyStick else {return}
-        guard let rightJoyStick = rightJoyStick else {return}
-        
-       
-         if leftJoyStick.containerView.frame.contains(location) {
-            updatePosition(location: CGPoint(x: leftJoyStick.baseView.frame.midX,
-                                             y: leftJoyStick.baseView.frame.midY),
-                           joyStick: leftJoyStick)
-        }
-        
-         if rightJoyStick.containerView.frame.contains(location) {
-            updatePosition(location: CGPoint(x: rightJoyStick.baseView.frame.midX,
-                                             y: rightJoyStick.baseView.frame.midY),
-                       joyStick: rightJoyStick)
+        if isJoystickEnable {
+            guard let leftJoyStick = leftJoyStick else {return}
+            guard let rightJoyStick = rightJoyStick else {return}
+            
+           
+             if leftJoyStick.containerView.frame.contains(location) {
+                updatePosition(location: CGPoint(x: leftJoyStick.baseView.frame.midX,
+                                                 y: leftJoyStick.baseView.frame.midY),
+                               joyStick: leftJoyStick)
+            }
+            
+             if rightJoyStick.containerView.frame.contains(location) {
+                updatePosition(location: CGPoint(x: rightJoyStick.baseView.frame.midX,
+                                                 y: rightJoyStick.baseView.frame.midY),
+                           joyStick: rightJoyStick)
+            }
         }
     }
     
@@ -233,22 +238,39 @@ class JoysticksViewController: UIViewController, SocketManagerDelegate {
         
         return state
     }
+    
+    func toggleJoystick(enable: Bool) {
+        if enable {
+            isJoystickEnable = true
+            leftJoyStick?.buttonView.alpha = 1
+            rightJoyStick?.buttonView.alpha = 1
+        }
+        else{
+            isJoystickEnable = false
+            leftJoyStick?.buttonView.alpha = 0.5
+            rightJoyStick?.buttonView.alpha = 0.5
+        }
+        
+    }
 
     //MARK :- SocketManagerDelegate
     func endEncoutered() {
         statusLabel.text = "Connection stopped by server"
         connectButton.isEnabled = true
+        toggleJoystick(enable: false)
     }
     
     func errorOccurred() {
         statusLabel.text = "Failed to connect to server"
         connectButton.isEnabled = true
+        toggleJoystick(enable: false)
         presentAlert()
     }
     
     func hasBytesAvailable() {
         statusLabel.text = "Got server key"
         getKeyButton.isEnabled = false
+        toggleJoystick(enable: true)
     }
     
     func openCompleted() {
