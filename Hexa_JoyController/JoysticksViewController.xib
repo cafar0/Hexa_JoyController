@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StartViewController" customModule="Hexa_JoyController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JoysticksViewController" customModule="Hexa_JoyController" customModuleProvider="target">
             <connections>
                 <outlet property="connectButton" destination="brV-2g-VWz" id="KRF-HE-8RU"/>
                 <outlet property="getKeyButton" destination="5QY-T4-sQu" id="nhX-MK-NXj"/>

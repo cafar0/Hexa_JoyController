@@ -40,8 +40,9 @@
 		D3370BA51ED6C32300DE21E7 /* SocketTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3370BA41ED6C32300DE21E7 /* SocketTestViewController.swift */; };
 		D3370BA71ED70A0900DE21E7 /* RSAUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3370BA61ED70A0900DE21E7 /* RSAUtils.swift */; };
 		D339D9B71ED83880005A37ED /* JoyStick.swift in Sources */ = {isa = PBXBuildFile; fileRef = D339D9B61ED83880005A37ED /* JoyStick.swift */; };
-		D376E72F1ED5750F006F36D3 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D376E72D1ED5750F006F36D3 /* StartViewController.swift */; };
-		D376E7301ED5750F006F36D3 /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D376E72E1ED5750F006F36D3 /* StartViewController.xib */; };
+		D3528C6A1EDD6A8C0052B609 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3528C691EDD6A8C0052B609 /* SocketManager.swift */; };
+		D376E72F1ED5750F006F36D3 /* JoysticksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D376E72D1ED5750F006F36D3 /* JoysticksViewController.swift */; };
+		D376E7301ED5750F006F36D3 /* JoysticksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D376E72E1ED5750F006F36D3 /* JoysticksViewController.xib */; };
 		D376E74D1ED579E6006F36D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D376E74C1ED579E6006F36D3 /* Assets.xcassets */; };
 		D3C348341ED5BCB500C7ACA1 /* CoreGraphics+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C348331ED5BCB500C7ACA1 /* CoreGraphics+Additions.swift */; };
 /* End PBXBuildFile section */
@@ -103,8 +104,9 @@
 		D3370BA41ED6C32300DE21E7 /* SocketTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketTestViewController.swift; sourceTree = "<group>"; };
 		D3370BA61ED70A0900DE21E7 /* RSAUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSAUtils.swift; sourceTree = "<group>"; };
 		D339D9B61ED83880005A37ED /* JoyStick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoyStick.swift; sourceTree = "<group>"; };
-		D376E72D1ED5750F006F36D3 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
-		D376E72E1ED5750F006F36D3 /* StartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
+		D3528C691EDD6A8C0052B609 /* SocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
+		D376E72D1ED5750F006F36D3 /* JoysticksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoysticksViewController.swift; sourceTree = "<group>"; };
+		D376E72E1ED5750F006F36D3 /* JoysticksViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JoysticksViewController.xib; sourceTree = "<group>"; };
 		D376E74C1ED579E6006F36D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3C348331ED5BCB500C7ACA1 /* CoreGraphics+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreGraphics+Additions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,9 +167,10 @@
 				D376E74C1ED579E6006F36D3 /* Assets.xcassets */,
 				D3146B551ED460E300AD31EC /* Info.plist */,
 				D3C348331ED5BCB500C7ACA1 /* CoreGraphics+Additions.swift */,
+				D3528C691EDD6A8C0052B609 /* SocketManager.swift */,
 				D339D9B61ED83880005A37ED /* JoyStick.swift */,
-				D376E72D1ED5750F006F36D3 /* StartViewController.swift */,
-				D376E72E1ED5750F006F36D3 /* StartViewController.xib */,
+				D376E72D1ED5750F006F36D3 /* JoysticksViewController.swift */,
+				D376E72E1ED5750F006F36D3 /* JoysticksViewController.xib */,
 				D3370BA41ED6C32300DE21E7 /* SocketTestViewController.swift */,
 				D3370BA61ED70A0900DE21E7 /* RSAUtils.swift */,
 			);
@@ -335,7 +338,7 @@
 			files = (
 				D3146B541ED460E300AD31EC /* LaunchScreen.storyboard in Resources */,
 				D376E74D1ED579E6006F36D3 /* Assets.xcassets in Resources */,
-				D376E7301ED5750F006F36D3 /* StartViewController.xib in Resources */,
+				D376E7301ED5750F006F36D3 /* JoysticksViewController.xib in Resources */,
 				D3146B4F1ED460E300AD31EC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,7 +371,7 @@
 				D3146B991ED4693800AD31EC /* SocketEngineWebsocket.swift in Sources */,
 				D3146B9E1ED4693800AD31EC /* SocketIOClientOption.swift in Sources */,
 				D3146B9F1ED4693800AD31EC /* SocketIOClientSpec.swift in Sources */,
-				D376E72F1ED5750F006F36D3 /* StartViewController.swift in Sources */,
+				D376E72F1ED5750F006F36D3 /* JoysticksViewController.swift in Sources */,
 				D3370BA51ED6C32300DE21E7 /* SocketTestViewController.swift in Sources */,
 				D3146BA01ED4693800AD31EC /* SocketIOClientStatus.swift in Sources */,
 				D3146BA11ED4693800AD31EC /* SocketLogger.swift in Sources */,
@@ -379,6 +382,7 @@
 				D3146BA51ED4693800AD31EC /* SocketTypes.swift in Sources */,
 				D3146B9A1ED4693800AD31EC /* SocketEventHandler.swift in Sources */,
 				D3146B951ED4693800AD31EC /* SocketEngineClient.swift in Sources */,
+				D3528C6A1EDD6A8C0052B609 /* SocketManager.swift in Sources */,
 				D3146BA21ED4693800AD31EC /* SocketPacket.swift in Sources */,
 				D3146B911ED4693800AD31EC /* SocketAckManager.swift in Sources */,
 				D3146B981ED4693800AD31EC /* SocketEngineSpec.swift in Sources */,

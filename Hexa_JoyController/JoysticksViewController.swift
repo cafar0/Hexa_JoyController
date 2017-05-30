@@ -10,7 +10,7 @@ import UIKit
 //import CoreGraphics
 
 
-class StartViewController: UIViewController, StreamDelegate {
+class JoysticksViewController: UIViewController, SocketManagerDelegate {
     
     //MARK :- Joystick declarations
     private var radius : CGFloat = 0
@@ -23,18 +23,8 @@ class StartViewController: UIViewController, StreamDelegate {
     
     private var lastLeftJoystickState : joystickState = .neutral
     private var lastRightJoystickState: joystickState = .neutral
-    
-    //MARK :- Networking declarations
-    var addr = "10.27.82.129"
-    let port = 9876
 
-    var inStream : InputStream?
-    var outStream : OutputStream?
-    
-    var buffer = [UInt8](repeating: 0, count: 300)
-    var inStreamLength : Int!
-    var keyString = ""
-
+    let socketManager = SocketManager.sharedInstance
     
     @IBOutlet weak var leftJoyContainer: UIView!
     @IBOutlet weak var righJoyContainer: UIView!
@@ -52,7 +42,7 @@ class StartViewController: UIViewController, StreamDelegate {
     
 
     @IBAction func onConnect(_ sender: Any) {
-        networkEnable()
+        socketManager.networkEnable()
         
         connectButton.alpha = 0.3
         connectButton.isEnabled = false
@@ -61,13 +51,13 @@ class StartViewController: UIViewController, StreamDelegate {
     
     @IBAction func onGetKey(_ sender: Any) {
         if let data = "Client: OK".data(using: String.Encoding.utf8) {
-            let _  = data.withUnsafeBytes({ outStream?.write($0, maxLength: data.count) })
+            let _  = data.withUnsafeBytes({ socketManager.outStream?.write($0, maxLength: data.count) })
         }
     }
     
     @IBAction func onQuit(_ sender: Any) {
         if let data = "Quit".data(using: String.Encoding.utf8) {
-            let _  = data.withUnsafeBytes({ outStream?.write($0, maxLength: data.count) })
+            let _  = data.withUnsafeBytes({ socketManager.outStream?.write($0, maxLength: data.count) })
         }
     }
 
@@ -79,14 +69,14 @@ class StartViewController: UIViewController, StreamDelegate {
         let prefix = "encrypted_message=".data(using: String.Encoding.utf8)!
         
         let encryptedMessage = RSAUtils.encryptWithRSAPublicKey(data,
-                                                                pubkeyBase64: keyString,
+                                                                pubkeyBase64: socketManager.keyString,
                                                                 keychainTag: TAG_PUBLIC_KEY)!
         let dataArray = NSMutableData()
         dataArray.append(prefix)
         dataArray.append(encryptedMessage)
         
         let finalMessage = dataArray as Data
-        let _ = finalMessage.withUnsafeBytes({ outStream?.write( $0, maxLength: finalMessage.count)})
+        let _ = finalMessage.withUnsafeBytes({ socketManager.outStream?.write( $0, maxLength: finalMessage.count)})
     }
     
     override func viewDidLoad() {
@@ -102,6 +92,7 @@ class StartViewController: UIViewController, StreamDelegate {
         }
         self.navigationController?.isNavigationBarHidden = true
         radius = leftJoyContainer.bounds.size.width / 4.0
+        socketManager.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -215,15 +206,15 @@ class StartViewController: UIViewController, StreamDelegate {
             switch state {
                 
             case .forward:
-                send(message: joyStick.upValue)
+                socketManager.send(message: joyStick.upValue)
             case .backward:
-                send(message: joyStick.downValue)
+                socketManager.send(message: joyStick.downValue)
             case .left:
-                send(message: joyStick.leftValue)
+                socketManager.send(message: joyStick.leftValue)
             case .right:
-                send(message: joyStick.rightValue)
+                socketManager.send(message: joyStick.rightValue)
             default:
-                send(message: joyStick.neutralValue)
+                socketManager.send(message: joyStick.neutralValue)
             }
             
             if joyStick.identifier == "left" { lastLeftJoystickState = state }
@@ -242,120 +233,47 @@ class StartViewController: UIViewController, StreamDelegate {
         
         return state
     }
-    
-    
-    //MARK :- Networking
-    func networkEnable() {
-        print("Network Enble")
-        Stream.getStreamsToHost(withName: addr, port: port,
-                                inputStream: &inStream, outputStream: &outStream)
-        inStream?.delegate = self
-        outStream?.delegate = self
-        
-        inStream?.schedule(in: .current, forMode: .defaultRunLoopMode)
-        outStream?.schedule(in: .current, forMode: .defaultRunLoopMode)
-        
-        inStream?.open()
-        outStream?.open()
-        
-        buffer = [UInt8](repeating: 0, count: 300)
+
+    //MARK :- SocketManagerDelegate
+    func endEncoutered() {
+        statusLabel.text = "Connection stopped by server"
+        connectButton.isEnabled = true
     }
     
-    func stream(_ aStream: Stream, handle eventCode: Stream.Event) {
-        switch eventCode {
-        
-        case Stream.Event.endEncountered:
-            print("End encountered")
-            statusLabel.text = "Connection stopped by server"
-            removeConnections()
-           connectButton.isEnabled = true
-            
-            buffer.removeAll(keepingCapacity: true)
-            keyString = ""
-            
-        case Stream.Event.errorOccurred:
-            print("Error ocurred")
-            removeConnections()
-            statusLabel.text = "Failed to connect to server"
-            connectButton.isEnabled = true
-            presentAlert()
-            
-        case Stream.Event.hasBytesAvailable:
-            print("Has bytes available")
-            if aStream == inStream {
-                inStreamLength = inStream?.read(&buffer, maxLength: buffer.count)
-                let bufferString = String(bytes: buffer, encoding: String.Encoding.utf8)
-                
-                if keyString.isEmpty {
-                    statusLabel.text = "Got server key"
-                    keyString = getKeyStringFromPEMString(PEMString: bufferString!) 
-                    getKeyButton.isEnabled = false
-                }
-                else { print(bufferString ?? "default value") }
-            }
-        
-        case Stream.Event.openCompleted:
-            statusLabel.text = "Connected to server"
-            getKeyButton.isEnabled = true
-        
-        default:
-            print("Unknown")
-        }
+    func errorOccurred() {
+        statusLabel.text = "Failed to connect to server"
+        connectButton.isEnabled = true
+        presentAlert()
     }
     
-    func send(message: String) {
-        let TAG_PUBLIC_KEY = "com.company.tag_public"
-        
-        let data = message.data(using: String.Encoding.utf8)!
-        let prefix = "encrypted_message=".data(using: String.Encoding.utf8)!
-        
-        let encryptedMessage = RSAUtils.encryptWithRSAPublicKey(data,
-                                                                pubkeyBase64: keyString,
-                                                                keychainTag: TAG_PUBLIC_KEY)!
-        let dataArray = NSMutableData()
-        dataArray.append(prefix)
-        dataArray.append(encryptedMessage)
-       
-        let finalMessage = dataArray as Data
-        let _ = finalMessage.withUnsafeBytes({ outStream?.write( $0, maxLength: finalMessage.count)})
+    func hasBytesAvailable() {
+        statusLabel.text = "Got server key"
+        getKeyButton.isEnabled = false
     }
     
-    
-    func getKeyStringFromPEMString(PEMString : String) -> String {
-        let keyArray = PEMString.components(separatedBy: "\n")
-        var keyOutput = ""
-        
-        keyArray.filter({ !$0.contains("-----") })
-                .filter({ !$0.contains("\0\0")})
-                .forEach({ keyOutput += $0 })
-        
-        
-        return keyOutput
+    func openCompleted() {
+        statusLabel.text = "Connected to server"
+        getKeyButton.isEnabled = true
     }
     
+    //MARK :- Alert
     func presentAlert() {
         let alert = UIAlertController(title: "Connection error",
                                       message: "Please check address",
                                       preferredStyle: .alert)
         alert.addTextField(configurationHandler: {[weak self] textField in
-            textField.text = self?.addr
+            textField.text = self?.socketManager.addr
         })
         
         alert.addAction(UIAlertAction(title: "OK",
                                       style: .default,
                                       handler: { [weak self, weak alert] _ in
                                         let textField = alert?.textFields![0]
-                                        self?.addr = (textField?.text)!
+                                        self?.socketManager.addr = (textField?.text)!
                                         print("Text filed: \(textField?.text ?? "")")
         }))
         
         self.present(alert, animated: true, completion: nil)
     }
-    
-    func removeConnections() {
-        inStream?.close()
-        inStream?.remove(from: .current, forMode: .defaultRunLoopMode)
-        outStream?.close()
-        outStream?.remove(from: .current, forMode: .defaultRunLoopMode)
-    }
+
 }
